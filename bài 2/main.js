@@ -1,46 +1,40 @@
-    var minutesInput = document.getElementsByClassName("box-minute");
-    var secondsInput = document.getElementsByClassName("box-second");
-    var startButton = document.getElementsByClassName("footer-start");
-    var resetButton = document.getElementsByClassName("footer-reset");
-    const alarm = document.getElementById('alarm');
+let timer;
+let minutesInput = document.getElementById('minutes');
+let secondsInput = document.getElementById('seconds');
+let alarmSound = document.getElementById('alarm');
 
-    let countdown;
+function startTimer() {
+    let minutes = parseInt(minutesInput.value);
+    let seconds = parseInt(secondsInput.value);
 
-    startButton.addEventListener('click', function () {
-        const minutes = parseInt(minutesInput.value);
-        const seconds = parseInt(secondsInput.value);
-        const totalTime = minutes*60 + seconds;
+    if (isNaN(minutes) || isNaN(seconds)) {
+        alert("Vui lòng nhập số phút và giây hợp lệ.");
+        return;
+    }
 
-        if (isNaN(totalTime) || totalTime <= 0) {
-            alert('Vui lòng nhập thời gian hợp lệ!');
+    let totalTime = minutes * 60 + seconds;
+
+    timer = setInterval(function() {
+        totalTime--;
+
+        if (totalTime < 0) {
+            clearInterval(timer);
+            alarmSound.play();
             return;
         }
 
-        startCountdown(totalTime);
+        let displayMinutes = Math.floor(totalTime / 60);
+        let displaySeconds = totalTime % 60;
 
-    });
+        minutesInput.value = displayMinutes.toString().padStart(2, '0');
+        secondsInput.value = displaySeconds.toString().padStart(2, '0');
+    }, 1000);
+}
 
-    resetButton.addEventListener('click', function () {
-        clearInterval(countdown);
-        minutesInput = '';
-        secondsInput = '';
-
-        
-    });
-
-    function startCountdown(totalTime) { 
-        let remainingTime = totalTime;
-        countdown = setInterval(function () { 
-            const phut = Math.floor(remainingTime/60);
-            const giay = remainingTime % 60 ;
-
-            if (phut === 0 && giay === 0) {
-                clearInterval(countdown);
-                alarm.play();
-                setTimeout(function () {
-                  alert('Hết giờ!');
-                }, 1000);
-            }
-            remainingTime--
-        },1000)
-    }
+function resetTimer() {
+    clearInterval(timer);
+    minutesInput.value = '';
+    secondsInput.value = '';
+    alarmSound.pause();
+    alarmSound.currentTime = 0;
+}
