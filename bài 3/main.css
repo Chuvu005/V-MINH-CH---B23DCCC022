@@ -1,0 +1,40 @@
+img {
+    width: 150px;
+    height: 150px;
+
+}
+
+#header .header-img {
+    width: 40%;
+}
+body {
+    background-color:cadetblue ;
+}
+
+#header {
+    display: flex;
+}
+
+h1,h2 {
+    text-align: center;
+    font-size: 50px;
+    color: antiquewhite;
+}
+.body-frofile {
+    padding-left: 30px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+    width: 40%;
+    font-size: 20px;
+}
+
+.box {
+    display: flex;
+}
+
+.body .body-frofiles {
+    font-size: 20px;
+}

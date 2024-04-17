@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donghodemnguoc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id = "main">
+        <div class = "header">
+            <h1>Đồng hồ đếm ngược</h1>
+            <div class = "border"></div>
+        </div>
+
+        <div class = "body">
+            <div class = "body-item">
+                <div class = "box">
+                    <h3 class = "box-item box-minute">Phút :</h3>
+                    <input type="text" class = "import-minute time">
+                </div>
+
+                <div class="box">
+                    <h3 class = "box-item box-second">Giây :</h3>
+                    <input type="text" class = "import-second time">
+                </div>
+                       
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="footer-start Press-the-button">START</button>
+            <button class="footer-reset Press-the-button">RESET</button>
+        </div>
+    
+        
+    </div> 
+    <audio id="alarm" src="alarm.mp3" loop></audio>
+    <script src="main.js"></script>
+</body>
+</html>

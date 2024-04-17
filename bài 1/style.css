@@ -1,0 +1,20 @@
+.calculator {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+input, button {
+    margin: 5px;
+    padding: 10px;
+}
+
+button {
+    cursor: pointer;
+}
+
+#result {
+    font-weight: bold;
+    margin-top: 10px;
+    color: rgb(123, 62, 62);
+}

@@ -1,0 +1,92 @@
+#main {
+    display: flex;
+    justify-content: center;
+    
+}
+
+h1 {
+    color: beige;
+    height: max-content;
+    text-align: center;
+    font-size: 40px;
+}
+
+.header {
+    height: 700px;
+    background-color: rgb(179, 105, 105);
+    width: 700px;
+    position: relative;
+}
+
+.border {
+    width: 100%;
+    height: 1px;
+    background-color: aliceblue;
+}
+
+.body-item {
+    width: 350px;
+    height: 350px;
+    background-color: #FF9999;
+    border-radius: 50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+
+.body {
+    position: absolute;
+    margin-top: 150px;
+}
+
+.body-item .time {
+    width: 60%;
+    height: 50px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid #FF9999;
+    font-size: 28px;
+    padding-left: 35px;
+    box-sizing: border-box;
+    font-family: Helvetica;
+}
+.body-item .time:hover {
+    opacity: 0.8;
+}
+
+.box {
+    text-align: center;
+}
+
+.box-item {
+    font-size: 25px;
+    color: beige;
+    margin: 3px 0 10px;
+}
+
+.footer {
+    position: absolute;
+    margin-top: 600px;
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer .Press-the-button {
+    width: 150px;
+    height: 50px;
+    background-color: #FF9999;
+    border: none;
+    color: beige;
+    cursor: pointer;
+    font-size: 25px;
+    
+}
+
+.footer .Press-the-button:hover {
+    color: #000;
+    background-color: antiquewhite;
+}
